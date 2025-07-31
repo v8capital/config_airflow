@@ -6,8 +6,9 @@ from datetime import date, datetime
 from v8_utilities.anbima_calendar import Calendar
 
 class Config(ABC):
-    def __init__(self, path: str):
+    def __init__(self, path: str, folder_root = ""):
         self.path = path  # Diretório onde o JSON será salvo
+        self.folder_root = folder_root # Lugar onde a saída da rotina será salva
 
         calendar_handle = Calendar(folder = ".")
         print(calendar_handle.today().date())

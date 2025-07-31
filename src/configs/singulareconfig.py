@@ -2,8 +2,8 @@ from v8_utilities.anbima_calendar import Calendar
 from config import Config
 
 class SingulareConfig(Config):
-    def __init__(self, path, fund_list = None, date_list = None):
-        super().__init__(path)
+    def __init__(self, path, folder_root = "", fund_list = None, date_list = None):
+        super().__init__(path, folder_root)
         if fund_list is None:
             fund_list = ["BS_PLUS_NP",
                          "FIRMA",

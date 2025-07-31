@@ -2,8 +2,8 @@ from config import Config
 from datetime import datetime
 
 class FidcsConfig(Config):
-    def __init__(self, path, fidcs_list=None, date=None):
-        super().__init__(path)
+    def __init__(self, path, folder_root = "", fidcs_list=None, date=None):
+        super().__init__(path, folder_root)
 
         if fidcs_list is None:
             fidcs_list = []  # caso seja vazio eu uso a função da classe Extractor
