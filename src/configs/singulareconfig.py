@@ -20,7 +20,13 @@ class SingulareConfig(Config):
 
         if date_list is None:
             calendar_handle = Calendar(folder = ".")
-            start_date = calendar_handle.today(-4)
+
+            #TODO: ajeitar para pegar APENAS dias úteis
+            start_date = calendar_handle.today(-1)
             end_date = calendar_handle.today(-1)
             date_list = calendar_handle.list_dates_between(start_date, end_date, ascending=False)
         self.date_list = date_list
+
+        class_name = self.__class__.__name__.lower()
+        date_ = self.today.strftime("%Y_%m_%d")
+        self.filename = f"{class_name}_{date_}.json"

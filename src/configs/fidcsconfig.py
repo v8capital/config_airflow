@@ -18,3 +18,7 @@ class FidcsConfig(Config):
         date = date.replace(day=1)
 
         self.date = date
+
+        class_name = self.__class__.__name__.lower()
+        date_ = self.date.strftime("%Y_%m_%d")
+        self.filename = f"{class_name}_{date_}.json"

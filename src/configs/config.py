@@ -22,10 +22,7 @@ class Config(ABC):
 
     def generate_config_file(self):
         # Gera o nome do arquivo no formato NomeDaClasse_YYYY-MM-DD.json
-        class_name = self.__class__.__name__.lower()
-        date_ = self.today.strftime("%Y_%m_%d")
-        filename = f"{class_name}_{date_}.json"
-        filepath = os.path.join(self.path, filename)
+        filepath = os.path.join(self.path, self.filename)
 
         # Cria o diretório se não existir
         os.makedirs(self.path, exist_ok=True)
