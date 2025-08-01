@@ -9,6 +9,7 @@ class Config(ABC):
     def __init__(self, path: str, folder_root = ""):
         self.path = path  # Diretório onde o JSON será salvo
         self.folder_root = folder_root # Lugar onde a saída da rotina será salva
+        self.consumed = False # Indica se o arquivo já foi consumido
 
         calendar_handle = Calendar(folder = ".")
         print(calendar_handle.today().date())
