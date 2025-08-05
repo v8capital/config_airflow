@@ -19,5 +19,4 @@ class SingulareConfig(Config):
         self.date_list = date_list
 
         class_name = self.__class__.__name__.lower()
-        date_ = self.today.strftime("%Y_%m_%d")
-        self.filename = f"{class_name}_{date_}.json"
+        self.filename = f"{class_name}.json"

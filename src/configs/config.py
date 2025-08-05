@@ -12,7 +12,7 @@ class Config(ABC):
         self.consumed = False  # Indica se o arquivo já foi consumido
 
         calendar_handle = Calendar(folder = ".")
-        self.today = calendar_handle.today().date()
+        self.date_generated = calendar_handle.today().date()
 
     def safe_serialize(self, value):
         if isinstance(value, list):
