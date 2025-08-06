@@ -15,7 +15,7 @@ class FidcsConfig(Config):
             date = datetime.strptime(date, "%Y-%m-%d").date()
 
         if date is None:
-            date = self.today
+            date = self.date_generated
 
         date = date.replace(day=1)
 
